@@ -1,9 +1,5 @@
 package model;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-
 public class Vehicle
 {
     private String color;
@@ -11,8 +7,6 @@ public class Vehicle
     private String manufacturer;
     private String model;
     private String licensePlate;
-
-    public Vehicle() {}
 
 
     public String getColor()
@@ -65,6 +59,15 @@ public class Vehicle
         this.licensePlate = licensePlate;
     }
 
+
+    public Vehicle(String licensePlate, String manufacturer, String model ,String color, String owner)
+    {
+        this.licensePlate = licensePlate;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.color = color;
+        this.owner = owner;
+    }
 
     @Override
     public String toString()

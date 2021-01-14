@@ -12,7 +12,8 @@ public class CarDatabase
     {
         for (int carCount = 0; carCount < 1000; carCount++)
         {
-            Vehicle vehicle = new Vehicle();
+            String manufacturer = MagicGenerator.getRandomManufacturer();
+            Vehicle vehicle = new Vehicle(MagicGenerator.getRandomLicensePlate(), manufacturer, MagicGenerator.getRandomModel(manufacturer), MagicGenerator.getRandomColor(), MagicGenerator.getRandomName());
             db.put(vehicle.getLicensePlate(), vehicle);
             System.out.println("Created vehicle: " + vehicle.getLicensePlate() + "!");
         }
@@ -22,6 +23,7 @@ public class CarDatabase
     {
         double startTime = System.nanoTime();
         List<Vehicle> foundedVehicles = new LinkedList<>();
+
 
         if (exact)
         {
@@ -39,8 +41,8 @@ public class CarDatabase
         }
 
         double endTime = System.nanoTime();
-        double searchTime = endTime - startTime;
-        System.out.println("Results found in: " + searchTime + " ns");
+        double searchTime = (endTime - startTime) / 1000000;
+        System.out.println("Results found in: " + searchTime + " ms");
 
         return foundedVehicles;
     }

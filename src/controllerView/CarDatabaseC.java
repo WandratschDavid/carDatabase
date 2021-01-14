@@ -13,7 +13,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class carDatabaseC implements Initializable
+public class CarDatabaseC implements Initializable
 {
     @FXML
     TextField searchField;
@@ -23,6 +23,9 @@ public class carDatabaseC implements Initializable
 
     @FXML
     private Label errorOutput;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
 
 
     private List<Vehicle> foundedVehicles;
@@ -37,10 +40,10 @@ public class carDatabaseC implements Initializable
 
     public void exactSearchBtn()
     {
-        exactSearch();
+        doExactSearch();
     }
 
-    public void exactSearch()
+    public void doExactSearch()
     {
         foundedVehicles = carDatabase.search(searchField.getText(), true);
 
@@ -56,19 +59,19 @@ public class carDatabaseC implements Initializable
 
     private void search()
     {
-        if((foundedVehicles.size() < 1) || foundedVehicles.contains(null))
+        if(!searchField.getText().equals(""))
         {
-            errorOutput.setText("Vehicle not found!");
-            errorOutput.setVisible(true);
-            listViewOutput.setItems(FXCollections.emptyObservableList());
-        }
-        else
-        {
-            errorOutput.setVisible(false);
-            listViewOutput.setItems(FXCollections.observableList(foundedVehicles));
+            if((foundedVehicles.size() < 1) || foundedVehicles.contains(null))
+            {
+                errorOutput.setText("Vehicle not found!");
+                errorOutput.setVisible(true);
+                listViewOutput.setItems(FXCollections.emptyObservableList());
+            }
+            else
+            {
+                errorOutput.setVisible(false);
+                listViewOutput.setItems(FXCollections.observableList(foundedVehicles));
+            }
         }
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {}
 }
