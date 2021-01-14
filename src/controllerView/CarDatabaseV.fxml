@@ -8,10 +8,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllerView.CarDatabaseC">
    <children>
-      <TextField fx:id="searchField" prefHeight="25.0" prefWidth="200.0" />
-      <Button layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#searchBtn" prefHeight="33.0" prefWidth="72.0" text="search" />
-      <Button layoutX="97.0" layoutY="32.0" mnemonicParsing="false" onAction="#exactSearchBtn" prefHeight="33.0" prefWidth="89.0" text="searchExact" />
-      <ListView fx:id="listViewOutput" layoutY="73.0" prefHeight="300.0" prefWidth="200.0" />
-      <Label fx:id="errorOutput" layoutY="374.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="searchField" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" />
+      <Button layoutY="24.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#searchBtn" prefHeight="50.0" prefWidth="90.0" text="search" />
+      <Button layoutX="89.0" layoutY="24.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#exactSearchBtn" prefHeight="50.0" prefWidth="110.0" text="searchExact" />
+      <ListView fx:id="listViewOutput" layoutY="73.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="200.0" />
+      <Label fx:id="errorOutput" layoutY="374.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="200.0" text="ErrorOutput" visible="false" />
    </children>
 </AnchorPane>

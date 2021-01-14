@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * @author David Wandratsch
+ * @version 1.0, 14.01.2021
+ */
+
 public class CarDatabase
 {
     protected HashMap<String, Vehicle> db = new HashMap<>();

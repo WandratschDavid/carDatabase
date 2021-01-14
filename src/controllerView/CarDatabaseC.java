@@ -13,6 +13,11 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * @author David Wandratsch
+ * @version 1.0, 14.01.2021
+ */
+
 public class CarDatabaseC implements Initializable
 {
     @FXML
